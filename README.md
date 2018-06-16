@@ -59,3 +59,37 @@ export AWS_DEFAULT_REGION=us-east-1
 taskcat -c sample-taskcat-project/ci/taskcat-autobucket.yaml -v
 
 ```
+
+### Usage
+```bash
+usage: taskcat [-h] [-c CONFIG_YML] [-P BOTO_PROFILE] [-A AWS_ACCESS_KEY]
+               [-S AWS_SECRET_KEY] [-n] [-N] [-p] [-v] [-m] [-t TAG]
+               [-s STACK_PREFIX]
+
+            Multi-Region CloudFormation Test Deployment Tool)
+            For more info see: http://taskcat.io
+
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CONFIG_YML, --config_yml CONFIG_YML
+                         (Config File Required!)
+                         example here: https://raw.githubusercontent.com/aws-quickstart/taskcat/master/examples/sample-taskcat-project/ci/taskcat.yml
+  -P BOTO_PROFILE, --boto_profile BOTO_PROFILE
+                        Authenticate using boto profile
+  -A AWS_ACCESS_KEY, --aws_access_key AWS_ACCESS_KEY
+                        AWS Access Key
+  -S AWS_SECRET_KEY, --aws_secret_key AWS_SECRET_KEY
+                        AWS Secret Key
+  -n, --no_cleanup      Sets cleanup to false (Does not teardown stacks)
+  -N, --no_cleanup_failed
+                        Sets cleaup to false if the stack launch fails (Does not teardown stacks if it experiences a failure)
+  -p, --public_s3_bucket
+                        Sets public_s3_bucket to True. (Accesses objects via public HTTP, not S3 API calls)
+  -v, --verbose         Enables verbosity
+  -m, --multithread_upload
+                        Enables multithreaded upload to S3
+  -t TAG, --tag TAG     add tag to cloudformation stack, must be in the format TagKey=TagValue, multiple -t can be specified
+  -s STACK_PREFIX, --stack-prefix STACK_PREFIX
+                        set prefix for cloudformation stack name. only accepts lowercase letters, numbers and '-'
+```
