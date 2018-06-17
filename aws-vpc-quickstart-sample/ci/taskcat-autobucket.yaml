@@ -1,0 +1,39 @@
+--- 
+global: 
+  # replace with your email
+  owner: owner@localhost
+  # this should match the name of the root of the sample-taskcat-project (not the root of the repo)
+  qsname: sample-taskcat-project
+  # this bucket should already exist, remove for autobucket creation
+  # s3bucket: taskcat-sample-taskcat-project-a1c14bc9
+  # enable reporting
+  reporting: true
+  # list of regions
+  regions:
+    - ap-northeast-1
+    - ap-northeast-2
+    - ap-southeast-1
+    - ap-southeast-2
+    - eu-central-1
+    - eu-west-1
+    - sa-east-1
+    - us-east-1
+    - us-west-1
+    - us-west-2
+
+# define tests, parameter_input, and template files
+tests:
+
+  taskcat-json:
+    parameter_input: debug-input.json
+    # This will only be tested against us-east-1
+    regions:
+      - us-east-1
+    template_file: debug.template
+
+  taskcat-yaml:
+    parameter_input: debug-input.json
+    # This should be tested against all regions listed in global section
+    #    regions:
+    #      - us-east-1
+    template_file: debug-yaml.template
