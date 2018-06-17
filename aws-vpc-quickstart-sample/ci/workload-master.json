@@ -1,7 +1,7 @@
 [
     {
         "ParameterKey": "AvailabilityZones",
-        "ParameterValue": "$[alfred_getaz_2]"
+        "ParameterValue": "$[taskcat_getaz_2]"
     },
     {
         "ParameterKey": "BastionAMIOS",
@@ -13,7 +13,7 @@
     },
     {
         "ParameterKey": "KeyPairName",
-        "ParameterValue": "$[alfred_getkeypair]"
+        "ParameterValue": "$[taskcat_getkeypair]"
     },
     {
         "ParameterKey": "OperatorEmail",
@@ -41,7 +41,7 @@
     },
     {
         "ParameterKey": "S3BucketName",
-        "ParameterValue": "alfred-develop-examples-$[alfred_genuuid]"
+        "ParameterValue": "russomi-aws-vpc-quickstart-sample-workload-$[taskcat_genuuid]"
     },
     {
         "ParameterKey": "VPCCIDR",
@@ -49,7 +49,7 @@
     },
     {
         "ParameterKey": "WorkloadInstanceType",
-        "ParameterValue": "m4.xlarge"
+        "ParameterValue": "t2.micro"
     },
     {
         "ParameterKey": "WorkloadNodesDesiredCapacity",

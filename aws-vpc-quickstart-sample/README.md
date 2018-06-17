@@ -6,12 +6,18 @@ Example AWS VPC Quickstart + TaskCat
 
 # add submodules:
 git submodule add -b master git@github.com:aws-quickstart/quickstart-aws-vpc.git submodules/quickstart-aws-vpc
+git submodule add -b master git@github.com:aws-quickstart/quickstart-linux-bastion.git submodules/quickstart-linux-bastion
+git submodule add -b master git@github.com:aws-quickstart/quickstart-microsoft-rdgateway.git submodules/quickstart-microsoft-rdgateway
 
 export AWS_DEFAULT_PROFILE=russomi
 export AWS_DEFAULT_REGION=us-east-1
 
-taskcat -c sample-taskcat-project/ci/taskcat-autobucket.yaml -v
+aws ec2 create-key-pair --key-name cikey --region us-east-1
+aws ec2 create-key-pair --key-name cikey --region us-east-2
+aws ec2 create-key-pair --key-name cikey --region us-west-1
+aws ec2 create-key-pair --key-name cikey --region us-west-2
 
+taskcat -c aws-vpc-quickstart-sample/ci/config.yml -v
 ```
 
 ### taskcat usage

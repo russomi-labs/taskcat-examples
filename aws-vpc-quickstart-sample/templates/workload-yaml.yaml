@@ -129,6 +129,7 @@ Parameters:
     Type: AWS::EC2::VPC::Id
   WorkloadInstanceType:
     AllowedValues:
+    - t2.micro
     - t2.large
     - m4.large
     - m4.xlarge
@@ -373,6 +374,7 @@ Resources:
             cfn-init --stack ${AWS::StackName} --resource WorkloadASLaunchConfig --configsets quickstart --region ${AWS::Region}
             # Signal the status from cfn-init
             cfn-signal -e $? --stack ${AWS::StackName} --resource WorkloadAutoScalingGroup --region ${AWS::Region}
+
   WorkloadScaleUpPolicy:
     Type: AWS::AutoScaling::ScalingPolicy
     Properties:
@@ -473,4 +475,4 @@ Outputs:
       Fn::GetAtt:
       - ElasticLoadBalancer
       - DNSName
-...
+
