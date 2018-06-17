@@ -61,12 +61,12 @@ taskcat -c sample-taskcat-project/ci/taskcat-autobucket.yaml -v
 ```
 
 ### Usage
-```bash
+```
 usage: taskcat [-h] [-c CONFIG_YML] [-P BOTO_PROFILE] [-A AWS_ACCESS_KEY]
                [-S AWS_SECRET_KEY] [-n] [-N] [-p] [-v] [-m] [-t TAG]
                [-s STACK_PREFIX]
 
-            Multi-Region CloudFormation Test Deployment Tool)
+            Multi-Region CloudFormation Test Deployment Tool
             For more info see: http://taskcat.io
 
 
