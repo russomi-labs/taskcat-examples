@@ -1,27 +1,28 @@
 # aws-vpc-quickstart-template
 Example AWS VPC Quickstart + TaskCat
 
-## CLI quickstart
+## cli quickstart
 ```bash
-
 # add submodules:
 git submodule add -b master git@github.com:aws-quickstart/quickstart-aws-vpc.git submodules/quickstart-aws-vpc
 git submodule add -b master git@github.com:aws-quickstart/quickstart-linux-bastion.git submodules/quickstart-linux-bastion
 git submodule add -b master git@github.com:aws-quickstart/quickstart-microsoft-rdgateway.git submodules/quickstart-microsoft-rdgateway
 
+# set AWS environment variables
 export AWS_DEFAULT_PROFILE=russomi
 export AWS_DEFAULT_REGION=us-east-1
 
+# Create keypairs in each region
 aws ec2 create-key-pair --key-name cikey --region us-east-1
 aws ec2 create-key-pair --key-name cikey --region us-east-2
 aws ec2 create-key-pair --key-name cikey --region us-west-1
 aws ec2 create-key-pair --key-name cikey --region us-west-2
 
-taskcat -c aws-vpc-quickstart-sample/ci/config.yml -v
+# run the taskcat!
+taskcat -c aws-vpc-quickstart-sample/ci/config.yml
 ```
 
 ### taskcat usage
-
 ```
 
 usage: taskcat [-h] [-c CONFIG_YML] [-P BOTO_PROFILE] [-A AWS_ACCESS_KEY]
@@ -58,7 +59,7 @@ optional arguments:
 
 # Builders Guide
 
-**What you’ll need to set up:**
+## What you’ll need to set up:
 
 *   Get a GitHub account.
     *   We use GitHub for source control. The GitHub organization for AWS Quick Starts is at [https://github.com/aws-quickstart](https://github.com/aws-quickstart).
@@ -68,7 +69,7 @@ optional arguments:
     *   For an IDE, you can use: Visual Studio with AWS Tools, Atom, Sublime Text, Visual Studio Code
     *   For source control, use: Git, GitHub.com website, SSH keys
 
-**What you’ll need to know:**
+## What you’ll need to know:
 
 *   If you haven’t used Git before, learn about commands and concepts at [https://git-scm.com/doc](https://git-scm.com/doc), especially the following sections:
     *   [Branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
@@ -84,37 +85,28 @@ optional arguments:
     *   [cfn-signal](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-signal.html)
 *   Explore AWS services to include in your deployment to improve the usefulness of your cloud architecture:
     *   View [AWS products and services](https://aws.amazon.com/products/) by category.
-    *   See the [planning](planning.html) section for some services to consider based on the characteristics of your workload.
+    *   See the [planning](#Planning-your-architecture) section for some services to consider based on the characteristics of your workload.
     *   Read the [AWS documentation](https://aws.amazon.com/documentation/) for complete details about a service.
 
-**Planning your architecture**
+## Planning your architecture
 
 Here are some of the questions you should consider when designing your architecture.
 
 * How many Availability Zones? You should use at least two for high availability.
-
 * Where should your workload be placed? Consider security and external access when deciding whether to install your software in a public or private subnet.
-
 * How many public and private subnets? If your workload needs an additional level of isolation, you might consider setting up a second private subnet with network ACL protection in each Availability Zone.
-
 * Is your workload distributed across multiple instances? If yes, use [Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/) to help ensure availability and fault tolerance.
-
 * Is your workload stateless or stateful? Do you save session state in the workload instances? If you don't, your workload instance would be a good candidate for [Auto Scaling](https://aws.amazon.com/autoscaling/).
-
 * Are you storing data? What kind of database do you need?
-
   *   If relational, use [Amazon RDS](https://aws.amazon.com/rds/).
   *   If NoSQL, [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) is a good option.
   *   If your database engine is MySQL or PostgreSQL, you can use [Amazon Aurora](https://aws.amazon.com/aurora/).
-
 * Are there any other AWS services that will complement the functionality of your software in the cloud? If yes, consider including them in your architecture. For example:
-
   *   If you need a directory, add [AWS Directory Service](https://aws.amazon.com/directoryservice/).
   *   For Hadoop processing, use [Amazon EMR](https://aws.amazon.com/emr/).
-
 * If your workload needs to meet compliance requirements such as NIST or PCI, consider using one of the [compliance Quick Starts](https://aws.amazon.com/quickstart/#security) for your infrastructure.
 
-**Submodules**
+## Submodules
 
 *   When you add a submodule, make sure it points to the master branch and use SSH to authenticate.
 *   Any submodule you add must reside in the submodules/_quickstart-repo-name_ directory of the repository, where _quickstart-repo-name_ is the name of the repository for the Quick Start that you are using as a submodule.
