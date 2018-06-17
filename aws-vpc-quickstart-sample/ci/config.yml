@@ -3,7 +3,6 @@ global:
   owner: quickstart-eng@amazon.com
   qsname: aws-vpc-quickstart-sample
   s3bucket: russomi-aws-vpc-quickstart-sample
-  # enable reporting
   reporting: true
   regions:
   - us-east-1
@@ -15,3 +14,5 @@ tests:
   ci-test:
     template_file: workload-yaml-master.yaml
     parameter_input: workload-master.json
+    regions:
+    - us-east-1

@@ -1,5 +1,13 @@
 [
     {
+        "ParameterKey": "QSS3BucketName",
+        "ParameterValue": "russomi-aws-vpc-quickstart-sample"
+    },
+    {
+        "ParameterKey": "QSS3KeyPrefix",
+        "ParameterValue": "aws-vpc-quickstart-sample/"
+    },
+    {
         "ParameterKey": "AvailabilityZones",
         "ParameterValue": "$[taskcat_getaz_2]"
     },
@@ -41,7 +49,7 @@
     },
     {
         "ParameterKey": "S3BucketName",
-        "ParameterValue": "russomi-aws-vpc-quickstart-sample-workload-$[taskcat_genuuid]"
+        "ParameterValue": "russomi-aws-vpc-quickstart-sample-workload-$[taskcat_random-string]"
     },
     {
         "ParameterKey": "VPCCIDR",
