@@ -1,0 +1,74 @@
+[
+    {
+        "ParameterKey": "QSS3BucketName",
+        "ParameterValue": "russomi-aws-vpc-quickstart-sample"
+    },
+    {
+        "ParameterKey": "QSS3KeyPrefix",
+        "ParameterValue": "aws-vpc-quickstart-sample/"
+    },
+    {
+        "ParameterKey": "AvailabilityZones",
+        "ParameterValue": "$[taskcat_getaz_2]"
+    },
+    {
+        "ParameterKey": "BastionAMIOS",
+        "ParameterValue": "Amazon-Linux-HVM"
+    },
+    {
+        "ParameterKey": "BastionInstanceType",
+        "ParameterValue": "t2.micro"
+    },
+    {
+        "ParameterKey": "KeyPairName",
+        "ParameterValue": "$[taskcat_getkeypair]"
+    },
+    {
+        "ParameterKey": "OperatorEmail",
+        "ParameterValue": "operator@example.com"
+    },
+    {
+        "ParameterKey": "PrivateSubnet1CIDR",
+        "ParameterValue": "10.0.0.0/19"
+    },
+    {
+        "ParameterKey": "PrivateSubnet2CIDR",
+        "ParameterValue": "10.0.32.0/19"
+    },
+    {
+        "ParameterKey": "PublicSubnet1CIDR",
+        "ParameterValue": "10.0.128.0/20"
+    },
+    {
+        "ParameterKey": "PublicSubnet2CIDR",
+        "ParameterValue": "10.0.144.0/20"
+    },
+    {
+        "ParameterKey": "RemoteAccessCIDR",
+        "ParameterValue": "10.0.0.0/16"
+    },
+    {
+        "ParameterKey": "S3BucketName",
+        "ParameterValue": "russomi-aws-vpc-quickstart-sample-workload-$[taskcat_random-string]"
+    },
+    {
+        "ParameterKey": "VPCCIDR",
+        "ParameterValue": "10.0.0.0/16"
+    },
+    {
+        "ParameterKey": "WorkloadInstanceType",
+        "ParameterValue": "t2.micro"
+    },
+    {
+        "ParameterKey": "WorkloadNodesDesiredCapacity",
+        "ParameterValue": "2"
+    },
+    {
+        "ParameterKey": "WorkloadNodesMaxSize",
+        "ParameterValue": "4"
+    },
+    {
+        "ParameterKey": "WorkloadNodesMinSize",
+        "ParameterValue": "2"
+    }
+]

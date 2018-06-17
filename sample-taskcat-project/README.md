@@ -1,4 +1,4 @@
-# taskcat-examples :heart_eyes_cat:
+# sample-taskcat-project
 
 ## What is TaskCat?
 > TaskCat is a tool that tests AWS CloudFormation templates. It deploys your AWS CloudFormation template in multiple AWS Regions and generates a report with a pass/fail grade for each region. You can specify the regions and number of Availability Zones you want to include in the test, and pass in parameter values from your AWS CloudFormation template. TaskCat is implemented as a Python class that you import, instantiate, and run.

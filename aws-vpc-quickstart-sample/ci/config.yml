@@ -1,0 +1,18 @@
+global:
+  marketplace-ami: false
+  owner: quickstart-eng@amazon.com
+  qsname: aws-vpc-quickstart-sample
+  s3bucket: russomi-aws-vpc-quickstart-sample
+  reporting: true
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-west-1
+  - us-west-2
+  reporting: true
+tests:
+  ci-test:
+    template_file: workload-yaml-master.yaml
+    parameter_input: workload-master.json
+    regions:
+    - us-east-1
